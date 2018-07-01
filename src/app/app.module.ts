@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ProcessListComponent } from './process-list/process-list.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProcessListComponent } from './process-list/process-list.component';
     NotFoundComponent,
     HomeComponent,
     AppNavComponent,
-    ProcessListComponent
+    ProcessListComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
