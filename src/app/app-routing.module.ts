@@ -6,11 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { ProcessListComponent } from './process-list/process-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+import { AuthService} from './auth.service';
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'process-list', component: ProcessListComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+  { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
+  { path: 'process-list', component: ProcessListComponent, canActivate:[AuthGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 
@@ -18,4 +21,5 @@ const routes: Routes = [
   imports: [ RouterModule.forRoot(routes) ],  
   exports: [ RouterModule ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
