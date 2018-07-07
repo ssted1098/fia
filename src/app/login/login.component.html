@@ -1,5 +1,22 @@
-<form (submit)="loginUser($event)">
-  <input type="text" placeholder="username" id="username">
-  <input type="password" placeholder="password" id="password">
-  <input type="submit" value="submit">
-</form>
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>Please login to continue</p>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="UserName" formControlName="userName" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Please inform your user name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Please inform your password
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Sign in</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

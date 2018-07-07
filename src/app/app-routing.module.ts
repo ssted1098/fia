@@ -6,8 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { ProcessListComponent } from './process-list/process-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-import { AuthService} from './auth.service';
-import { AuthGuard } from './auth.guard';
+import { AuthService} from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, 
